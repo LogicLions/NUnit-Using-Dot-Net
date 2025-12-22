@@ -1,7 +1,9 @@
-namespace NUnitUsingDotNet
+using NUnit.Framework.Legacy;
+
+namespace NUnitUsingDotNet.Tests
 {
     [TestFixture]
-    public class MyTestCase
+    public class MyMathTests
     {
         private MyMath _myMath;
 
@@ -23,7 +25,8 @@ namespace NUnitUsingDotNet
             int actualResult = _myMath.add(x, y);
 
             // Assert
-            Assert.AreEqual(expctedOutput, actualResult);
+            // ClassicAssert.AreEqual(expctedOutput, actualResult);
+            Assert.That(actualResult, Is.EqualTo(expctedOutput));
         }
 
         [Test]
@@ -38,7 +41,8 @@ namespace NUnitUsingDotNet
             int actualResult = _myMath.subtract(x, y);
 
             // Assert
-            Assert.AreEqual(expectedOutput, actualResult);
+            // ClassicAssert.AreEqual(expectedOutput, actualResult);
+            Assert.That(actualResult, Is.EqualTo(expectedOutput));
         }
     }
 }
